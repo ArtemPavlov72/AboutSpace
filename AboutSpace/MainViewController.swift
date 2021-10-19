@@ -2,85 +2,68 @@
 //  MainViewController.swift
 //  AboutSpace
 //
-//  Created by iMac on 14.10.2021.
+//  Created by Павлов Артем on 14.10.2021.
 //
 
 import UIKit
 
+//ссылки, где хранятся данные json
+enum Link: String {
+    case imageURL = "https://apod.nasa.gov/apod/image/2109/RedSquare_Tuthill_960.jpg"
+    case marsRoverPhotos = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&camera=fhaz&api_key=DEMO_KEY"
+}
+
+//каждый кейс - это отдельная кнопка на экране
+//Подписываем под CaseIterable, чтобы нам были доступны все case из enum
+enum UserAction: String, CaseIterable {
+    case downloadImage = "NASA photo"
+    case marsRoverPhotos = "Mars Rover photos"
+}
+
 class MainViewController: UICollectionViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    //создаем неизменяемый массив со всеми кнопками. Чтобы в ручную не перечислять все case, мы подписываем UserAction под протокол CaseIterable, и нам становится доступным allCases
+    let userActions = UserAction.allCases
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
-    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     // MARK: UICollectionViewDataSource
-
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-
+    // настраиваем экран с ячейками
+    //количество секций
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+        userActions.count
+        
     }
-
+    //настраиваем саму ячейку
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        // Configure the cell
+        // кастим до нашей созданной ячейки UserActionCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! UserActionCell
+        //передаем названия кейсов в лейбл ячейки
+        cell.userLabel.text = userActions[indexPath.item].rawValue
+        
     
         return cell
     }
 
     // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
+    //метод благодаря которому наши ячейки превращаются в кнопки
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+       //определяем какую кнопку нажал пользователь, и в зависимости от этого переходим по нужному сигвею
+        let userAction = userActions[indexPath.item]
+        
+        switch userAction {
+        case .downloadImage:
+            performSegue(withIdentifier: "showImage", sender: nil)
+        case .marsRoverPhotos:
+            performSegue(withIdentifier: "nil", sender: nil)
+        }
     }
-    */
+  
 
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
+}
+
+//Протокол для настройки размеров ячейки в зависимости от экрана устройства. В отличие от tableView в collectionView это необходимо настраивать в ручную
+extension MainViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        CGSize(width: UIScreen.main.bounds.width - 48, height: 100) //ширину настраиваем через UIScreen, -48 это величина отступа от границ экрана
     }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
-
 }

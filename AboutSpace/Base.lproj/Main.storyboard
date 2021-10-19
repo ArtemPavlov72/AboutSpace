@@ -16,13 +16,34 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ds4-GO-nez">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="V12-BD-Yce">
+                                <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ds4-GO-nez" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="4FU-Hm-DTf"/>
+                            <constraint firstItem="V12-BD-Yce" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8vo-SJ-red"/>
+                            <constraint firstItem="ds4-GO-nez" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="90H-1L-2ad"/>
+                            <constraint firstItem="V12-BD-Yce" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RWV-EI-cmn"/>
+                            <constraint firstItem="ds4-GO-nez" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="S8I-Wi-drn"/>
+                            <constraint firstItem="ds4-GO-nez" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Uat-Q1-OKb"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="oRH-QU-vSa"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="V12-BD-Yce" id="au8-bT-fkw"/>
+                        <outlet property="imageView" destination="ds4-GO-nez" id="x7C-tM-0zl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1814" y="-218"/>
+            <point key="canvasLocation" x="1840.8" y="-224.4377811094453"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="E01-fp-DQz">
@@ -32,14 +53,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="40" minimumInteritemSpacing="40" id="3mU-eb-zrx">
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="40" minimumInteritemSpacing="40" id="3mU-eb-zrx">
                             <size key="itemSize" width="340" height="100"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="40" maxX="0.0" maxY="40"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="soh-Oe-gST">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="soh-Oe-gST" customClass="UserActionCell" customModule="AboutSpace" customModuleProvider="target">
                                 <rect key="frame" x="17.5" y="40" width="340" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="xWM-UM-nqa">
@@ -59,19 +80,25 @@
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="userLabel" destination="e0d-jp-8CT" id="hOn-Ca-x5H"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <integer key="value" value="15"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
                         <connections>
                             <outlet property="dataSource" destination="fAb-h8-YjD" id="DTs-cA-Hlu"/>
                             <outlet property="delegate" destination="fAb-h8-YjD" id="YRU-TH-XBn"/>
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Main View Controller" id="zAd-FN-SLd"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="showImage" id="vZT-eF-Fql"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cH4-sk-msj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

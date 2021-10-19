@@ -14,6 +14,7 @@
 		886C1DB427186BA2008ABDCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 886C1DB327186BA2008ABDCC /* Assets.xcassets */; };
 		886C1DB727186BA2008ABDCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 886C1DB527186BA2008ABDCC /* LaunchScreen.storyboard */; };
 		886C1DBF2718713F008ABDCC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886C1DBE2718713F008ABDCC /* MainViewController.swift */; };
+		886C1DC1271C72FB008ABDCC /* UserActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886C1DC0271C72FB008ABDCC /* UserActionCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		886C1DB627186BA2008ABDCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		886C1DB827186BA2008ABDCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		886C1DBE2718713F008ABDCC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		886C1DC0271C72FB008ABDCC /* UserActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActionCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				886C1DAE27186B9F008ABDCC /* ViewController.swift */,
 				886C1DAA27186B9F008ABDCC /* AppDelegate.swift */,
 				886C1DAC27186B9F008ABDCC /* SceneDelegate.swift */,
+				886C1DC0271C72FB008ABDCC /* UserActionCell.swift */,
 				886C1DB027186B9F008ABDCC /* Main.storyboard */,
 				886C1DB327186BA2008ABDCC /* Assets.xcassets */,
 				886C1DB527186BA2008ABDCC /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				886C1DC1271C72FB008ABDCC /* UserActionCell.swift in Sources */,
 				886C1DAF27186B9F008ABDCC /* ViewController.swift in Sources */,
 				886C1DAB27186B9F008ABDCC /* AppDelegate.swift in Sources */,
 				886C1DAD27186B9F008ABDCC /* SceneDelegate.swift in Sources */,
