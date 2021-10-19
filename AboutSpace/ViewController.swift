@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         //создаем экземпляр класса URL, вставляем нашу ссылку
         guard let url = URL(string: Link.imageURL.rawValue) else { return }
         // создаем сетевой запрос через синглтон URLSession, вызываем метод URLSession и говорим по какому url делать запрос
-        // data - нужная информация, urlrespinse - метоинформация от сервера, error - ошибка, ее всегда надо обрабатывать
+        // data - нужная информация, urlresponse - метоинформация от сервера, error - ошибка, ее всегда надо обрабатывать
         // в этом месте уходим в фоновый поток
         URLSession.shared.dataTask(with: url) { data, response, error in
             //дальше извлекаем данные, и если не сможем извлечь, то попытаемся извлечь объект ошибки, и если это не получилось, то выводим на консоль "No error description"
@@ -42,14 +42,14 @@ class ViewController: UIViewController {
             
             //создаем изображение
             guard let image = UIImage(data: data) else {return}
-            //идем в главный поток асинхронно, т.е. без очереди (парралельно с теми задачами, что происходят в потоке
+            //идем в главный поток асинхронно, т.е. без очереди (параллельно с теми задачами, что происходят в потоке
             DispatchQueue.main.async {
-            //передаем изображение
-            self.imageView.image = image
-            //останавливаем ромашку
-            self.activityIndicator.stopAnimating()
-            //вызываем метод resume, означаем, что как только данные будут получены, мы начинаем с ними работать
+                //передаем изображение
+                self.imageView.image = image
+                //останавливаем ромашку
+                self.activityIndicator.stopAnimating()
             }
+            //вызываем метод resume, означаем, что как только данные будут получены, мы начинаем с ними работать
         }.resume()
         
     }
