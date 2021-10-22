@@ -15,6 +15,9 @@
 		886C1DB727186BA2008ABDCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 886C1DB527186BA2008ABDCC /* LaunchScreen.storyboard */; };
 		886C1DBF2718713F008ABDCC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886C1DBE2718713F008ABDCC /* MainViewController.swift */; };
 		886C1DC1271C72FB008ABDCC /* UserActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886C1DC0271C72FB008ABDCC /* UserActionCell.swift */; };
+		888D1B1F272093AB00750F49 /* RoverPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888D1B1E272093AB00750F49 /* RoverPhotoViewController.swift */; };
+		888D1B21272093F100750F49 /* RoverPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888D1B20272093F100750F49 /* RoverPhoto.swift */; };
+		888D1B232720950500750F49 /* RoverPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888D1B222720950500750F49 /* RoverPhotoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		886C1DB827186BA2008ABDCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		886C1DBE2718713F008ABDCC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		886C1DC0271C72FB008ABDCC /* UserActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActionCell.swift; sourceTree = "<group>"; };
+		888D1B1E272093AB00750F49 /* RoverPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverPhotoViewController.swift; sourceTree = "<group>"; };
+		888D1B20272093F100750F49 /* RoverPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverPhoto.swift; sourceTree = "<group>"; };
+		888D1B222720950500750F49 /* RoverPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverPhotoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,10 +67,13 @@
 			isa = PBXGroup;
 			children = (
 				886C1DBE2718713F008ABDCC /* MainViewController.swift */,
+				888D1B1E272093AB00750F49 /* RoverPhotoViewController.swift */,
 				886C1DAE27186B9F008ABDCC /* ViewController.swift */,
 				886C1DAA27186B9F008ABDCC /* AppDelegate.swift */,
 				886C1DAC27186B9F008ABDCC /* SceneDelegate.swift */,
 				886C1DC0271C72FB008ABDCC /* UserActionCell.swift */,
+				888D1B222720950500750F49 /* RoverPhotoCell.swift */,
+				888D1B20272093F100750F49 /* RoverPhoto.swift */,
 				886C1DB027186B9F008ABDCC /* Main.storyboard */,
 				886C1DB327186BA2008ABDCC /* Assets.xcassets */,
 				886C1DB527186BA2008ABDCC /* LaunchScreen.storyboard */,
@@ -148,7 +157,10 @@
 				886C1DAF27186B9F008ABDCC /* ViewController.swift in Sources */,
 				886C1DAB27186B9F008ABDCC /* AppDelegate.swift in Sources */,
 				886C1DAD27186B9F008ABDCC /* SceneDelegate.swift in Sources */,
+				888D1B21272093F100750F49 /* RoverPhoto.swift in Sources */,
+				888D1B1F272093AB00750F49 /* RoverPhotoViewController.swift in Sources */,
 				886C1DBF2718713F008ABDCC /* MainViewController.swift in Sources */,
+				888D1B232720950500750F49 /* RoverPhotoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

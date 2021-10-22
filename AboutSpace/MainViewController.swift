@@ -31,8 +31,8 @@ class MainViewController: UICollectionViewController {
     //количество секций
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         userActions.count
-        
     }
+    
     //настраиваем саму ячейку
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // кастим до нашей созданной ячейки UserActionCell
@@ -40,7 +40,6 @@ class MainViewController: UICollectionViewController {
         //передаем названия кейсов в лейбл ячейки
         cell.userLabel.text = userActions[indexPath.item].rawValue
         
-    
         return cell
     }
 
@@ -54,10 +53,19 @@ class MainViewController: UICollectionViewController {
         case .downloadImage:
             performSegue(withIdentifier: "showImage", sender: nil)
         case .marsRoverPhotos:
-            performSegue(withIdentifier: "nil", sender: nil)
+            performSegue(withIdentifier: "roverSeg", sender: nil)
         }
     }
   
+    // MARK: - Navigation
+    //метод prepare будет вызываться при любом переходе по любому сигвею, поэтому необходимо указать условие, по какому из сигвею нужно вызывать данный метод
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "roverSeg" {
+            guard let roverPhotoVC = segue.destination as? RoverPhotoViewController
+            else {return}
+            roverPhotoVC.fetchPhotos()
+        }
+    }
 
 }
 
