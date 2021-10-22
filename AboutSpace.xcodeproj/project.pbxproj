@@ -66,20 +66,68 @@
 		886C1DA927186B9F008ABDCC /* AboutSpace */ = {
 			isa = PBXGroup;
 			children = (
+				888D1B2927233BBF00750F49 /* ViewControllers */,
+				888D1B2827233B8700750F49 /* App */,
+				888D1B2527233B5400750F49 /* Views */,
+				888D1B2627233B6700750F49 /* Models */,
+				888D1B2427233B1000750F49 /* Storyboards */,
+				888D1B2727233B7400750F49 /* Resources */,
+			);
+			path = AboutSpace;
+			sourceTree = "<group>";
+		};
+		888D1B2427233B1000750F49 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				886C1DB027186B9F008ABDCC /* Main.storyboard */,
+				886C1DB527186BA2008ABDCC /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		888D1B2527233B5400750F49 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				886C1DC0271C72FB008ABDCC /* UserActionCell.swift */,
+				888D1B222720950500750F49 /* RoverPhotoCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		888D1B2627233B6700750F49 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				888D1B20272093F100750F49 /* RoverPhoto.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		888D1B2727233B7400750F49 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				886C1DB327186BA2008ABDCC /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		888D1B2827233B8700750F49 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				886C1DAA27186B9F008ABDCC /* AppDelegate.swift */,
+				886C1DAC27186B9F008ABDCC /* SceneDelegate.swift */,
+				886C1DB827186BA2008ABDCC /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		888D1B2927233BBF00750F49 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
 				886C1DBE2718713F008ABDCC /* MainViewController.swift */,
 				888D1B1E272093AB00750F49 /* RoverPhotoViewController.swift */,
 				886C1DAE27186B9F008ABDCC /* ViewController.swift */,
-				886C1DAA27186B9F008ABDCC /* AppDelegate.swift */,
-				886C1DAC27186B9F008ABDCC /* SceneDelegate.swift */,
-				886C1DC0271C72FB008ABDCC /* UserActionCell.swift */,
-				888D1B222720950500750F49 /* RoverPhotoCell.swift */,
-				888D1B20272093F100750F49 /* RoverPhoto.swift */,
-				886C1DB027186B9F008ABDCC /* Main.storyboard */,
-				886C1DB327186BA2008ABDCC /* Assets.xcassets */,
-				886C1DB527186BA2008ABDCC /* LaunchScreen.storyboard */,
-				886C1DB827186BA2008ABDCC /* Info.plist */,
 			);
-			path = AboutSpace;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,7 +359,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QQ7NB58NL6;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = AboutSpace/Info.plist;
+				INFOPLIST_FILE = AboutSpace/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -339,7 +387,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QQ7NB58NL6;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = AboutSpace/Info.plist;
+				INFOPLIST_FILE = AboutSpace/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
