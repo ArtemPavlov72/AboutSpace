@@ -25,6 +25,7 @@ class NetworkManager {
     
     private init() {}
     
+    //загрузка картинки
     func fetchImage(from url: String?, completion: @escaping(Result<Data, NetworkError>) -> Void) {
         guard let url = URL(string: url ?? "") else {
             completion(.failure(.invalidURL))
