@@ -14,13 +14,13 @@ struct RoverPhoto: Decodable {
 struct MarsRoverPhoto: Decodable {
     let id: Int?
     let sol: Int?
-    let img_src: String?
-    let earth_date: String?
+    let imgSrc: String?
+    let earthDate: String?
     let rover: RoverSpecs?
 }
 
 struct RoverSpecs: Decodable {
     let name: String?
-    let landing_date: String?
+    let landingDate: String?
     let status: String?
 }

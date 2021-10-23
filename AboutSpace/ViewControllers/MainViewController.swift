@@ -57,7 +57,7 @@ class MainViewController: UICollectionViewController {
         if segue.identifier == "roverSeg" {
             guard let roverPhotoVC = segue.destination as? RoverPhotoViewController
             else {return}
-            roverPhotoVC.fetchPhotos()
+            roverPhotoVC.fetchRoverPhotos()
         }
     }
 

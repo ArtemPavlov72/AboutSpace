@@ -21,13 +21,13 @@ class RoverPhotoCell: UITableViewCell {
         //заполняем элементы интерфейса
         roverNameLabel.text = roverPhoto?.rover?.name
         idPhoto.text = "ID of Mars Rover: \(roverPhoto?.id ?? 0)"
-        dateOfPhoto.text = "Date of photo: \(roverPhoto?.earth_date ?? "")"
+        dateOfPhoto.text = "Date of photo: \(roverPhoto?.earthDate ?? "")"
         
         //передаем изображения
         //картинки могут грузиться позже, и чтобы не тормозить весь интерфейс, мы переключаем загрузку картинки в глобальный поток
         DispatchQueue.global().async {
             //создаем url адрес
-            guard let url = URL(string: roverPhoto?.img_src ?? "") else { return }
+            guard let url = URL(string: roverPhoto?.imgSrc ?? "") else { return }
             //пытаемся загрузить картинку
             guard let imageData = try? Data(contentsOf: url) else { return }
             //переключаемся на основной поток

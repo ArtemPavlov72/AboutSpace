@@ -37,28 +37,18 @@ class RoverPhotoViewController: UITableViewController {
         return cell
     }
 }
-    // MARK: - Networking
+// MARK: - Networking
 extension RoverPhotoViewController {
-    func fetchPhotos() {
-        guard let url = URL(string: Link.marsRoverPhotos.rawValue) else {return}
-        
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            guard let data = data else {
-                print(error?.localizedDescription ?? "No error description")
-                return
+    func fetchRoverPhotos() {
+        NetworkManager.shared.fetch(dataType: RoverPhoto.self, from: Link.marsRoverPhotos.rawValue, convertFromSnakeCase: true) { result in
+            switch result {
+            case.success(let photo):
+                self.roverPhoto = photo
+                self.tableView.reloadData()
+            case .failure(let error):
+                print(error)
             }
-            
-            //теперь в Do мы не должны создавать новый массив, а должны обновлять
-            do {
-                self.roverPhoto = try JSONDecoder().decode(RoverPhoto.self, from: data)
-                DispatchQueue.main.async {
-                    //принудительно обновляем методы Table view data source, так как json может загружаться не быстро
-                    self.tableView.reloadData()
-                }
-            } catch let error {
-                print(error.localizedDescription)
-            }
-        }.resume()
+        }
     }
 }
 
