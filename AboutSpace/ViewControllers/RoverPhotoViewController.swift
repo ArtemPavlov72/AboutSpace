@@ -20,7 +20,7 @@ class RoverPhotoViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        roverPhoto?.photos?.count ?? 1
+        roverPhoto?.photos?.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView,
