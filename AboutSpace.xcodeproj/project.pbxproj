@@ -18,6 +18,7 @@
 		888D1B1F272093AB00750F49 /* RoverPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888D1B1E272093AB00750F49 /* RoverPhotoViewController.swift */; };
 		888D1B21272093F100750F49 /* RoverPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888D1B20272093F100750F49 /* RoverPhoto.swift */; };
 		888D1B232720950500750F49 /* RoverPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888D1B222720950500750F49 /* RoverPhotoCell.swift */; };
+		888D1B2B27233C3D00750F49 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888D1B2A27233C3D00750F49 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		888D1B1E272093AB00750F49 /* RoverPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverPhotoViewController.swift; sourceTree = "<group>"; };
 		888D1B20272093F100750F49 /* RoverPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverPhoto.swift; sourceTree = "<group>"; };
 		888D1B222720950500750F49 /* RoverPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverPhotoCell.swift; sourceTree = "<group>"; };
+		888D1B2A27233C3D00750F49 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 		886C1DA927186B9F008ABDCC /* AboutSpace */ = {
 			isa = PBXGroup;
 			children = (
+				888D1B2C27233C4600750F49 /* Services */,
 				888D1B2927233BBF00750F49 /* ViewControllers */,
 				888D1B2827233B8700750F49 /* App */,
 				888D1B2527233B5400750F49 /* Views */,
@@ -128,6 +131,14 @@
 				886C1DAE27186B9F008ABDCC /* ViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		888D1B2C27233C4600750F49 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				888D1B2A27233C3D00750F49 /* NetworkManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				888D1B2B27233C3D00750F49 /* NetworkManager.swift in Sources */,
 				886C1DC1271C72FB008ABDCC /* UserActionCell.swift in Sources */,
 				886C1DAF27186B9F008ABDCC /* ViewController.swift in Sources */,
 				886C1DAB27186B9F008ABDCC /* AppDelegate.swift in Sources */,

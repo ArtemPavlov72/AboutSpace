@@ -7,12 +7,6 @@
 
 import UIKit
 
-//ссылки, где хранятся данные json
-enum Link: String {
-    case imageURL = "https://apod.nasa.gov/apod/image/2109/RedSquare_Tuthill_960.jpg"
-    case marsRoverPhotos = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&camera=fhaz&api_key=DEMO_KEY"
-}
-
 //каждый кейс - это отдельная кнопка на экране
 //Подписываем под CaseIterable, чтобы нам были доступны все case из enum
 enum UserAction: String, CaseIterable {
